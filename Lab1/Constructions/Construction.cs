@@ -10,9 +10,21 @@ namespace Lab1.Constructions
     {
         public Construction()
         {
-
+            Height 23;
+            Width = 43;
+            Entrances = 3;
+            HumanCapacity = 2;
+            BuildMaterial = "Material";
         }
-        public Construction(float height, float width, int entrances, int humancapacity, string buildmaterial)
+        public Construction(CreateConstructionDto construction)
+        {
+            Height = construction.height;
+            Width = construction.width;
+            Entrances = construction.entrances;
+            HumanCapacity = construction.humancapacity;
+            BuildMaterial = construction.buildmaterial;
+        }
+            public Construction(float height, float width, int entrances, int humancapacity, string buildmaterial)
         {
             Height = height;
             Width = width;
@@ -23,11 +35,7 @@ namespace Lab1.Constructions
         }
 
 
-        public float Height { get; set; }
-        public float Width { get; set; }
-        public int Entrances { get; set; }
-        public int HumanCapacity { get; set; }+
-        private string _buildMaterial { get; set; }
+            CreateConstructionDto
 
         public string BuildMaterial {
             get
