@@ -26,8 +26,24 @@ namespace Lab1.Constructions
         public float Height { get; set; }
         public float Width { get; set; }
         public int Entrances { get; set; }
-        public int HumanCapacity { get; set; }
-        public string BuildMaterial { get; set; }
+        public int HumanCapacity { get; set; }+
+        private string _buildMaterial { get; set; }
+
+        public string BuildMaterial {
+            get
+            {
+                return _buildMaterial;
+            }
+            set
+            {
+                if(string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("Value can not be null");
+                }
+                _buildMaterial = value + "test";
+            }
+        }
+
     }
 
 }
