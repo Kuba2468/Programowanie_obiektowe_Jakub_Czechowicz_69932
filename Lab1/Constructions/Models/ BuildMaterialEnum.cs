@@ -9,7 +9,7 @@ namespace Lab1.Construction.Models
     internal enum BuildMaterialEnum
     {
         brik = 0,
-        Wood = 0,
-        Concrete = 200,
+        Wood = 10,
+        Concrete = 20,
     }
 }
