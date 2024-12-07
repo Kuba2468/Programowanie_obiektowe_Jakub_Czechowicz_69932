@@ -40,7 +40,7 @@ var indhall = new IndustrialHall();
 Console.WriteLine(resbuild.Entrances);
 Console.WriteLine(indhall.BuildMaterial);
 
-var wrapper1 = new BuildingWrapper(resbuild);
+var wrapper11 = new BuildingWrapper(resbuild);
 var wrapper2 = new BuildingWrapper(indhall);
 var CommercialBuild = new CommercialBuilding(new CreateConstructionDTO()
 {
@@ -50,7 +50,7 @@ var CommercialBuild = new CommercialBuilding(new CreateConstructionDTO()
     Entrances = 2
 }, "B2B");
 
-Console.WriteLine(wrapper1.GetWrappedSquareCost());
+Console.WriteLine(wrapper11.GetWrappedSquareCost());
 Console.WriteLine(wrapper2.GetWrappedSquareCost());
 var construction6 = new Construction(new CreateConstructionDTO()
 {
