@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kubac\\source\\repos\\Kuba2468\\Programowanie_obiektowe_Jakub_Czechowicz_69932\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2072750-C558-4370-A982-4323A2C7FF80}|Lab1\\Lab1.csproj|c:\\users\\kubac\\source\\repos\\kuba2468\\programowanie_obiektowe_jakub_czechowicz_69932\\lab1\\constructions\\construction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2072750-C558-4370-A982-4323A2C7FF80}|Lab1\\Lab1.csproj|solutionrelative:lab1\\constructions\\construction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08E6BDB0-E903-4ABE-BE7A-1E1924E58FD9}|Lab2\\Lab2.csproj|c:\\users\\kubac\\source\\repos\\kuba2468\\programowanie_obiektowe_jakub_czechowicz_69932\\lab2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08E6BDB0-E903-4ABE-BE7A-1E1924E58FD9}|Lab2\\Lab2.csproj|solutionrelative:lab2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Construction.cs",
+              "DocumentMoniker": "C:\\Users\\kubac\\source\\repos\\Kuba2468\\Programowanie_obiektowe_Jakub_Czechowicz_69932\\Lab1\\Constructions\\Construction.cs",
+              "RelativeDocumentMoniker": "Lab1\\Constructions\\Construction.cs",
+              "ToolTip": "C:\\Users\\kubac\\source\\repos\\Kuba2468\\Programowanie_obiektowe_Jakub_Czechowicz_69932\\Lab1\\Constructions\\Construction.cs",
+              "RelativeToolTip": "Lab1\\Constructions\\Construction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T16:12:16.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kubac\\source\\repos\\Kuba2468\\Programowanie_obiektowe_Jakub_Czechowicz_69932\\Lab2\\Program.cs",
+              "RelativeDocumentMoniker": "Lab2\\Program.cs",
+              "ToolTip": "C:\\Users\\kubac\\source\\repos\\Kuba2468\\Programowanie_obiektowe_Jakub_Czechowicz_69932\\Lab2\\Program.cs",
+              "RelativeToolTip": "Lab2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T16:12:03.58Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
