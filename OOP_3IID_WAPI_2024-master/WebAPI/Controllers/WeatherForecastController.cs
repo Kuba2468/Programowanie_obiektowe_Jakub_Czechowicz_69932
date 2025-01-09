@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.Controllers.Databases;
 
 namespace WebAPI.Controllers
 {
@@ -12,11 +13,37 @@ namespace WebAPI.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ApiContext _apiContext;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,ApiContext apiContext)
         {
             _logger = logger;
+            _apiContext = apiContext;
         }
+
+        [HttpGet]
+        public IEnumerable<WeatherForecast> GetAllFromDB()
+        {
+            return _apiContext.WeatherForecasts.ToList();
+
+        }
+
+        [HttpPost]
+        public WeatherForecast AddForecasttoDB(WeatherForecast forecasts)
+        {
+            var result = _apiContext.WeatherForecasts.Add(forecasts);
+            _apiContext.SaveChanges();
+            return result.Entity;
+        }
+
+        [HttpPut]
+        public WeatherForecast AddForecastFromDB(WeatherForecast forecasts)
+        {
+            var result = _apiContext.WeatherForecasts.Add(forecasts);
+            _apiContext.SaveChanges();
+            return result.Entity;
+        }
+
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
