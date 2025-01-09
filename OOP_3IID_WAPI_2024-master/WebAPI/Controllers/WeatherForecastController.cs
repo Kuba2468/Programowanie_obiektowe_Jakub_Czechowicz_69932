@@ -43,7 +43,7 @@ namespace WebAPI.Controllers
             return x * y;
         }
 
-        [HttpGets]
+        [HttpGet]
         public string GetSummary(int x)
         {
             return Summaries[x];
