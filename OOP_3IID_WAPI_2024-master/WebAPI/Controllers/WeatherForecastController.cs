@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.Controllers.Databases;
 
 namespace WebAPI.Controllers
 {
@@ -13,37 +12,13 @@ namespace WebAPI.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly ApiContext _apiContext;
+        private readonly ApiContext _context;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger,ApiContext apiContext)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ApiContext apiContext)
         {
             _logger = logger;
-            _apiContext = apiContext;
+            _context = apiContext;
         }
-
-        [HttpGet]
-        public IEnumerable<WeatherForecast> GetAllFromDB()
-        {
-            return _apiContext.WeatherForecasts.ToList();
-
-        }
-
-        [HttpPost]
-        public WeatherForecast AddForecasttoDB(WeatherForecast forecasts)
-        {
-            var result = _apiContext.WeatherForecasts.Add(forecasts);
-            _apiContext.SaveChanges();
-            return result.Entity;
-        }
-
-        [HttpPut]
-        public WeatherForecast AddForecastFromDB(WeatherForecast forecasts)
-        {
-            var result = _apiContext.WeatherForecasts.Add(forecasts);
-            _apiContext.SaveChanges();
-            return result.Entity;
-        }
-
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
@@ -99,22 +74,52 @@ namespace WebAPI.Controllers
             return items.ToArray();
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult DeleteForecastFromDB(int id)
+        [HttpGet]
+        public IEnumerable<WeatherForecast> GetAllFromDB()
         {
-            if (id <= 0)
-            {
-                return BadRequest("Invalid ID");
-            }
-
-            var forecast = _context.WeatherForecasts.Find(id);
-            if (forecast == null)
-            {
-                return NotFound();
-            }
-
-            _context.WeatherForecasts.Remove(forecast);
-            _context.SaveChanges();
-
-            return NoContent();
+            return _context.WeatherForecasts.ToList();
         }
+
+        [HttpPost]
+        public WeatherForecast AddForecastToDB(WeatherForecast forecast)
+        {
+            var result = _context.WeatherForecasts.Add(forecast);
+            _context.SaveChanges();
+            return result.Entity;
+        }
+
+        [HttpPost]
+        public WeatherForecast UpdateForecastFromDB(WeatherForecast forecast)
+        {
+            var result = _context.WeatherForecasts.Update(forecast);
+            _context.SaveChanges();
+            return result.Entity;
+        }
+
+        [HttpDelete]
+        public ActionResult DeleteForecastFromDB(int id)
+        {
+            var result = _context.WeatherForecasts.FirstOrDefault(x => x.Id == id);
+
+            if (result is null)
+                return BadRequest("Nie ma takigo rekordu ID");
+
+            _context.Remove(result);
+            _context.SaveChanges();
+            return Ok();
+        }
+
+        [HttpGet]
+        public ActionResult<WeatherForecast> GetForecastFromDBbyID(int id)
+        {
+            var result = _context.WeatherForecasts.FirstOrDefault(x => x.Id == id);
+
+            if (result is null)
+                return BadRequest("Nie ma takiego rekordu ID");
+
+            result.TemperatureC = 6 + 9 + 9 + 3 + 2;
+
+            return Ok(result);
+        }
+    }
+}
