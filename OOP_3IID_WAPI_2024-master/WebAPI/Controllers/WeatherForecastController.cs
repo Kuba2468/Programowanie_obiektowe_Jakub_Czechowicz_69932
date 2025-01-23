@@ -99,5 +99,22 @@ namespace WebAPI.Controllers
             return items.ToArray();
         }
 
-    }
-}
+        [HttpDelete("{id}")]
+        public IActionResult DeleteForecastFromDB(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid ID");
+            }
+
+            var forecast = _context.WeatherForecasts.Find(id);
+            if (forecast == null)
+            {
+                return NotFound();
+            }
+
+            _context.WeatherForecasts.Remove(forecast);
+            _context.SaveChanges();
+
+            return NoContent();
+        }

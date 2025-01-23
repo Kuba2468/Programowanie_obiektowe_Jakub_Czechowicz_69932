@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\OOP_3IID_WAPI_2024-master",
+    "\\OOP_3IID_WAPI_2024-master\\WebAPI"
   ],
-  "SelectedNode": "\\OOP_3IID_WAPI_2024.sln",
+  "SelectedNode": "\\OOP_3IID_WAPI_2024-master\\WebAPI\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
